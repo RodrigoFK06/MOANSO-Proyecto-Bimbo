@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FormularioCronograma : Form
+    public partial class FormularioRealizaEncuestasEmpleado : Form
     {
-        public FormularioCronograma()
+        public FormularioRealizaEncuestasEmpleado()
         {
             InitializeComponent();
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }
