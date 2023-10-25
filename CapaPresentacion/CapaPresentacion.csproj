@@ -53,6 +53,12 @@
     <Compile Include="FormularioActividades.Designer.cs">
       <DependentUpon>FormularioActividades.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioActividadesDeCapacitaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioActividadesDeCapacitaciones.Designer.cs">
+      <DependentUpon>FormularioActividadesDeCapacitaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioAsistencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,12 @@
     </Compile>
     <Compile Include="FormularioDocumentoResultadosProgreso.Designer.cs">
       <DependentUpon>FormularioDocumentoResultadosProgreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioEmpleadoDesarrolloIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioEmpleadoDesarrolloIndividual.Designer.cs">
+      <DependentUpon>FormularioEmpleadoDesarrolloIndividual.cs</DependentUpon>
     </Compile>
     <Compile Include="FormularioEmpleados.cs">
       <SubType>Form</SubType>
@@ -113,11 +125,19 @@
     <Compile Include="FormularioPlanDesarrolloFormativo.Designer.cs">
       <DependentUpon>FormularioPlanDesarrolloFormativo.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="FormularioResolucionEvaluacionProgreso.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormularioResolucionEvaluacionProgreso.Designer.cs">
       <DependentUpon>FormularioResolucionEvaluacionProgreso.cs</DependentUpon>
+=======
+    <Compile Include="FormularioRealizaEncuestasEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioRealizaEncuestasEmpleado.Designer.cs">
+      <DependentUpon>FormularioRealizaEncuestasEmpleado.cs</DependentUpon>
+>>>>>>> ramita
     </Compile>
     <Compile Include="FormularioResultadoDesempeño.cs">
       <SubType>Form</SubType>
@@ -152,6 +172,9 @@
     <EmbeddedResource Include="FormularioActividades.resx">
       <DependentUpon>FormularioActividades.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormularioActividadesDeCapacitaciones.resx">
+      <DependentUpon>FormularioActividadesDeCapacitaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioAsistencias.resx">
       <DependentUpon>FormularioAsistencias.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioDocumentoResultadosProgreso.resx">
       <DependentUpon>FormularioDocumentoResultadosProgreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioEmpleadoDesarrolloIndividual.resx">
+      <DependentUpon>FormularioEmpleadoDesarrolloIndividual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioEmpleados.resx">
       <DependentUpon>FormularioEmpleados.cs</DependentUpon>
@@ -182,8 +208,13 @@
     <EmbeddedResource Include="FormularioPlanDesarrolloFormativo.resx">
       <DependentUpon>FormularioPlanDesarrolloFormativo.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="FormularioResolucionEvaluacionProgreso.resx">
       <DependentUpon>FormularioResolucionEvaluacionProgreso.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="FormularioRealizaEncuestasEmpleado.resx">
+      <DependentUpon>FormularioRealizaEncuestasEmpleado.cs</DependentUpon>
+>>>>>>> ramita
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioResultadoDesempeño.resx">
       <DependentUpon>FormularioResultadoDesempeño.cs</DependentUpon>
