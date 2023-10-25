@@ -17,7 +17,7 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void FormularioEncuestas_Load(object sender, EventArgs e)
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }
