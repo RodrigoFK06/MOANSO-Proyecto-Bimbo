@@ -225,6 +225,20 @@ namespace CapaPresentacion
             frmDocResProgreso.Show();
         }
 
+        private void abrirResolucioinEvaProgreso(object formHija)
+        {
+            if (this.panelContenedor.Controls.Count > 0)
+            {
+                this.panelContenedor.Controls.RemoveAt(0);
+            }
+            Form frmResolEvaProgreso = formHija as Form;
+            frmResolEvaProgreso.TopLevel = false;
+            frmResolEvaProgreso.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(frmResolEvaProgreso);
+            this.panelContenedor.Tag = frmResolEvaProgreso;
+            frmResolEvaProgreso.Show();
+        }
+
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
             abrirFormEmpleados(new FormularioEmpleados());
@@ -283,6 +297,11 @@ namespace CapaPresentacion
         private void btnPlanDesarrolloFormativo_Click(object sender, EventArgs e)
         {
             abrirPlanDesarrolloFormativo(new FormularioPlanDesarrolloFormativo());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            abrirResolucioinEvaProgreso(new FormularioResolucionEvaluacionProgreso());
         }
     }
 }

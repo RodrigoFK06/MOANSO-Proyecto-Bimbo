@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FormularioEvaluacionProgreso : Form
+    public partial class FormularioResolucionEvaluacionProgreso : Form
     {
-        public FormularioEvaluacionProgreso()
+        public FormularioResolucionEvaluacionProgreso()
         {
             InitializeComponent();
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
