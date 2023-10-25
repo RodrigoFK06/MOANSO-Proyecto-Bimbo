@@ -35,15 +35,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pickerFechaContratacion = new System.Windows.Forms.DateTimePicker();
-            this.txtArea = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPuesto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.listaEmpleados = new System.Windows.Forms.DataGridView();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbPuesto = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,11 +53,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(394, 9);
+            this.label1.Location = new System.Drawing.Point(327, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 29);
+            this.label1.Size = new System.Drawing.Size(240, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Empleados";
+            this.label1.Text = "CRUD - Empleados";
             // 
             // label2
             // 
@@ -109,13 +110,6 @@
             this.pickerFechaContratacion.Size = new System.Drawing.Size(207, 20);
             this.pickerFechaContratacion.TabIndex = 6;
             // 
-            // txtArea
-            // 
-            this.txtArea.Location = new System.Drawing.Point(153, 260);
-            this.txtArea.Name = "txtArea";
-            this.txtArea.Size = new System.Drawing.Size(207, 20);
-            this.txtArea.TabIndex = 10;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -125,13 +119,6 @@
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Area:";
-            // 
-            // txtPuesto
-            // 
-            this.txtPuesto.Location = new System.Drawing.Point(153, 223);
-            this.txtPuesto.Name = "txtPuesto";
-            this.txtPuesto.Size = new System.Drawing.Size(207, 20);
-            this.txtPuesto.TabIndex = 8;
             // 
             // label6
             // 
@@ -146,9 +133,9 @@
             // listaEmpleados
             // 
             this.listaEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listaEmpleados.Location = new System.Drawing.Point(444, 112);
+            this.listaEmpleados.Location = new System.Drawing.Point(446, 152);
             this.listaEmpleados.Name = "listaEmpleados";
-            this.listaEmpleados.Size = new System.Drawing.Size(439, 228);
+            this.listaEmpleados.Size = new System.Drawing.Size(433, 228);
             this.listaEmpleados.TabIndex = 11;
             this.listaEmpleados.SelectionChanged += new System.EventHandler(this.listaEmpleados_SelectionChanged);
             // 
@@ -191,20 +178,54 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Area 01",
+            "Area 02",
+            "Area 03",
+            "Area 04",
+            "Area 05",
+            "Area 06"});
+            this.comboBox1.Location = new System.Drawing.Point(153, 260);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(207, 21);
+            this.comboBox1.TabIndex = 16;
+            // 
+            // cbPuesto
+            // 
+            this.cbPuesto.FormattingEnabled = true;
+            this.cbPuesto.Location = new System.Drawing.Point(153, 223);
+            this.cbPuesto.Name = "cbPuesto";
+            this.cbPuesto.Size = new System.Drawing.Size(207, 21);
+            this.cbPuesto.TabIndex = 17;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(443, 133);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Lista Empleados:";
+            // 
             // FormularioEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(926, 450);
+            this.ClientSize = new System.Drawing.Size(914, 450);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cbPuesto);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.listaEmpleados);
-            this.Controls.Add(this.txtArea);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtPuesto);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pickerFechaContratacion);
             this.Controls.Add(this.label4);
@@ -231,14 +252,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker pickerFechaContratacion;
-        private System.Windows.Forms.TextBox txtArea;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPuesto;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView listaEmpleados;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbPuesto;
+        private System.Windows.Forms.Label label7;
     }
 }

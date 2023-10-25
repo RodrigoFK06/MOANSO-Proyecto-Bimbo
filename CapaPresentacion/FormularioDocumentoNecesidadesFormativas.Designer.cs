@@ -38,6 +38,7 @@
             this.pickerFechaCreacion = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listaDocNecesidadesFormativas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,9 +126,18 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(265, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(441, 29);
+            this.label1.Size = new System.Drawing.Size(398, 29);
             this.label1.TabIndex = 54;
-            this.label1.Text = "Documento Necesidades Formativas";
+            this.label1.Text = "CORE - Necesidades Formativas";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(448, 366);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 27);
+            this.button1.TabIndex = 70;
+            this.button1.Text = "Comparar estandares";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FormularioDocumentoNecesidadesFormativas
             // 
@@ -135,6 +145,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(926, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pickerFechaImplementacion);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtNecesidades);
@@ -166,5 +177,6 @@
         private System.Windows.Forms.DateTimePicker pickerFechaCreacion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

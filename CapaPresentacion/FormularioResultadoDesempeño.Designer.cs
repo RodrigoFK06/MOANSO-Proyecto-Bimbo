@@ -165,11 +165,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(304, 9);
+            this.label1.Location = new System.Drawing.Point(265, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(316, 29);
+            this.label1.Size = new System.Drawing.Size(425, 29);
             this.label1.TabIndex = 48;
-            this.label1.Text = "Resultado de Desempeño";
+            this.label1.Text = "CORE - Resultados de Desempeño";
             // 
             // comboEvaDesempeño
             // 
