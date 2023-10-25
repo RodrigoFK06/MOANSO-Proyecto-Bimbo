@@ -60,10 +60,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 26);
+            this.label5.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(5, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(230, 16);
+            this.label5.Size = new System.Drawing.Size(262, 16);
             this.label5.TabIndex = 68;
             this.label5.Text = "CRUD - Resolucion de actividades";
             // 

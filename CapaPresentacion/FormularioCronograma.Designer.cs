@@ -66,6 +66,7 @@
             this.label5.Size = new System.Drawing.Size(230, 16);
             this.label5.TabIndex = 68;
             this.label5.Text = "CRUD - Resolucion de actividades";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // groupBox2
             // 
