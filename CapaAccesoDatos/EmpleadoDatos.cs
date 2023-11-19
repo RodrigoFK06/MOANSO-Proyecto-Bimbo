@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaAccesoDatos
 {
-    public class EmpleadoDatos
+    public class EmpleadoDatos : Conexion
     {
         private string connectionString;
 
@@ -44,7 +44,7 @@ namespace CapaAccesoDatos
             List<Empleado> empleados = new List<Empleado>();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "LeerEmpleado"; // Reemplaza con el nombre real del procedimiento almacenado de LeerEmpleados
+                string query = "GetEmpleados"; // Reemplaza con el nombre real del procedimiento almacenado de LeerEmpleados
                 using (SqlCommand cmd = new SqlCommand(query, connection))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -57,7 +57,7 @@ namespace CapaAccesoDatos
                             Empleado empleado = new Empleado
                             {
                                 IdEmpleado = Convert.ToInt32(reader["IdEmpleado"]),
-                                Nombre = reader["Nombre"].ToString(),
+                                Nombre = reader["NombreEmpleado"].ToString(),
                                 Apellido = reader["Apellido"].ToString(),
                                 FechaContratacion = Convert.ToDateTime(reader["FechaContratacion"]),
                                 Puesto = reader["Puesto"].ToString(),

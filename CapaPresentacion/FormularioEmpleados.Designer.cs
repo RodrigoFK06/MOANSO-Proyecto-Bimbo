@@ -42,7 +42,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbArea = new System.Windows.Forms.ComboBox();
             this.cbPuesto = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaEmpleados)).BeginInit();
@@ -182,20 +182,20 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // comboBox1
+            // cbArea
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbArea.FormattingEnabled = true;
+            this.cbArea.Items.AddRange(new object[] {
             "Area 01",
             "Area 02",
             "Area 03",
             "Area 04",
             "Area 05",
             "Area 06"});
-            this.comboBox1.Location = new System.Drawing.Point(153, 260);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(207, 21);
-            this.comboBox1.TabIndex = 16;
+            this.cbArea.Location = new System.Drawing.Point(153, 260);
+            this.cbArea.Name = "cbArea";
+            this.cbArea.Size = new System.Drawing.Size(207, 21);
+            this.cbArea.TabIndex = 16;
             // 
             // cbPuesto
             // 
@@ -223,7 +223,7 @@
             this.ClientSize = new System.Drawing.Size(914, 450);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbPuesto);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbArea);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGuardar);
@@ -263,7 +263,7 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbArea;
         private System.Windows.Forms.ComboBox cbPuesto;
         private System.Windows.Forms.Label label7;
     }

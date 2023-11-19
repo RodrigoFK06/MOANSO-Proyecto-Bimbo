@@ -352,7 +352,6 @@
             this.btnAsistencias.TabIndex = 3;
             this.btnAsistencias.Text = "Asistencias";
             this.btnAsistencias.UseVisualStyleBackColor = false;
-            this.btnAsistencias.Click += new System.EventHandler(this.btnAsistencias_Click);
             // 
             // btnActividades
             // 

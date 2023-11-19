@@ -246,13 +246,10 @@ namespace CapaPresentacion
 
         private void btnActividades_Click(object sender, EventArgs e)
         {
-            abrirFormActividades(new FormularioActividades());
+            abrirFormActividades(new FormularioActividadesDeCapacitaciones());
         }
 
-        private void btnAsistencias_Click(object sender, EventArgs e)
-        {
-            abrirFormAsistencias(new FormularioAsistencias());
-        }
+
 
         private void btnEncuestas_Click(object sender, EventArgs e)
         {
