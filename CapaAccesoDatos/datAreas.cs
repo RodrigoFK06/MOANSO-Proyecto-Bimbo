@@ -26,7 +26,7 @@ namespace CapaAccesoDatos
         #endregion singleton
 
         #region metodos
-        ////////////////////listado de Clientes
+        ////////////////////listado de Area
         public List<entAreas> ListarAreas()
         {
             SqlCommand cmd = null;
@@ -61,7 +61,7 @@ namespace CapaAccesoDatos
         }
         #endregion
 
-        //////////////////////////////////EditaCliente
+        //////////////////////////////////EditaArea
         public Boolean ModificarArea(entAreas ar)
         {
             SqlCommand cmd = null;
@@ -89,7 +89,7 @@ namespace CapaAccesoDatos
             finally { cmd.Connection.Close(); }
             return edita;
         }
-        /////////////////////////InsertaCliente
+        /////////////////////////InsertaArea
         public Boolean RegistrarArea(entAreas ar)
         {
             SqlCommand cmd = null;

@@ -253,9 +253,9 @@
             this.btnResultadoDesempeño.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnResultadoDesempeño.Location = new System.Drawing.Point(12, 500);
             this.btnResultadoDesempeño.Name = "btnResultadoDesempeño";
-            this.btnResultadoDesempeño.Size = new System.Drawing.Size(202, 32);
+            this.btnResultadoDesempeño.Size = new System.Drawing.Size(240, 32);
             this.btnResultadoDesempeño.TabIndex = 9;
-            this.btnResultadoDesempeño.Text = "Res. Desempeño";
+            this.btnResultadoDesempeño.Text = "Preguntas Encuesta";
             this.btnResultadoDesempeño.UseVisualStyleBackColor = false;
             this.btnResultadoDesempeño.Click += new System.EventHandler(this.btnResultadoDesempeño_Click);
             // 

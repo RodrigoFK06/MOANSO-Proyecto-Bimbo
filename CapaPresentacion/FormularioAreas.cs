@@ -18,7 +18,6 @@ namespace CapaPresentacion
         public FormularioAreas()
         {
             InitializeComponent();
-            InitializeComponent();
             btnCancelar.Visible = false;
             grupboxDatos.Enabled = false;
             txtId.Enabled = false;
@@ -196,5 +195,7 @@ namespace CapaPresentacion
                 }
             }
         }
+
+        
     }
 }

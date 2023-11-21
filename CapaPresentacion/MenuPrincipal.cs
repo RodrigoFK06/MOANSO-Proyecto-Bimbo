@@ -281,7 +281,7 @@ namespace CapaPresentacion
 
         private void btnResultadoDesempeño_Click(object sender, EventArgs e)
         {
-            abrirResDesempeño(new FormularioResultadoDesempeño());
+            abrirResDesempeño(new FormularioPreguntaEncuesta());
         }
 
         private void btnDocNecesidadesFormativas_Click(object sender, EventArgs e)

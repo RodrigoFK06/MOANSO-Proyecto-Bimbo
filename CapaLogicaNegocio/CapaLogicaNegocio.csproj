@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="EmpleadoLogica.cs" />
     <Compile Include="logAreas.cs" />
+    <Compile Include="logEncuesta.cs" />
+    <Compile Include="logPreguntasE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
