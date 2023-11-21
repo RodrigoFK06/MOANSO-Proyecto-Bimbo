@@ -18,13 +18,13 @@ namespace CapaAccesoDatos
         public SqlConnection Conectar()
         {
             SqlConnection cn = new SqlConnection();
-            cn.ConnectionString = "Data Source=DESKTOP-BBHD49R; Initial Catalog =bdProyectoBimbo;" +//"User ID=sa; Password=123";
+            cn.ConnectionString = "Data Source=.; Initial Catalog =bdProyectoBimbo;" +//"User ID=sa; Password=123";
                                 "Integrated Security=true";
 
             return cn;
         }
 
-        private readonly string cadenaConexion = "Data Source=DESKTOP-BBHD49R;Initial Catalog=bdProyectoBimbo;Integrated Security=True;";
+        private readonly string cadenaConexion = "Data Source=.;Initial Catalog=bdProyectoBimbo;Integrated Security=True;";
 
 
         protected SqlConnection ObtenerConexion()

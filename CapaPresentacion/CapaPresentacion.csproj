@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="FormDetalleEvaluacionDesempeño.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetalleEvaluacionDesempeño.Designer.cs">
+      <DependentUpon>FormDetalleEvaluacionDesempeño.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioActividadesDeCapacitaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     <Compile Include="FormularioPlanDesarrolloFormativo.Designer.cs">
       <DependentUpon>FormularioPlanDesarrolloFormativo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioPreguntasEvaluacionDesempeño.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPreguntasEvaluacionDesempeño.Designer.cs">
+      <DependentUpon>FormularioPreguntasEvaluacionDesempeño.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioRealizaEncuestasEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +179,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormDetalleEvaluacionDesempeño.resx">
+      <DependentUpon>FormDetalleEvaluacionDesempeño.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioActividadesDeCapacitaciones.resx">
       <DependentUpon>FormularioActividadesDeCapacitaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioPlanDesarrolloFormativo.resx">
       <DependentUpon>FormularioPlanDesarrolloFormativo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPreguntasEvaluacionDesempeño.resx">
+      <DependentUpon>FormularioPreguntasEvaluacionDesempeño.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioRealizaEncuestasEmpleado.resx">
       <DependentUpon>FormularioRealizaEncuestasEmpleado.cs</DependentUpon>

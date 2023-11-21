@@ -271,7 +271,7 @@ namespace CapaPresentacion
 
         private void btnEvaluacionDesempeño_Click(object sender, EventArgs e)
         {
-            abrirFormEvaDesempeño(new FormularioEvaluacionDesempeño());
+            abrirFormEvaDesempeño(new FormularioPreguntasEvaluacionDesempeño());
         }
 
         private void btnEvaluacionProgreso_Click(object sender, EventArgs e)

@@ -50,9 +50,11 @@
     <Compile Include="datEstandarCompetencia.cs" />
     <Compile Include="datNecesidadesFormativas.cs" />
     <Compile Include="datPreguntasE.cs" />
+    <Compile Include="DetEvaDesempeñoDatos.cs" />
     <Compile Include="EmpleadoDatos.cs" />
     <Compile Include="NecesidadesFormativasDatos.cs" />
     <Compile Include="PlanDesarrolloFormativoDatos.cs" />
+    <Compile Include="PregEvaDesempeñoDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

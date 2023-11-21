@@ -27,7 +27,7 @@ namespace CapaAccesoDatos
             try
             {
                 SqlConnection cn = Conexion.Instancia.Conectar();
-                cmd = new SqlCommand("spListaNecesidadesFormativas", cn);
+                cmd = new SqlCommand("GetNecesidadesFormativas", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
