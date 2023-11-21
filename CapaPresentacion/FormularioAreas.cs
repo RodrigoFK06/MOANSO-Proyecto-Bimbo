@@ -51,6 +51,7 @@ namespace CapaPresentacion
             dtaAreas.Enabled = false;
             btnRegistrar.Enabled = true;
             btnCancelar.Visible = false;
+            LimpiarVariables();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -178,7 +179,7 @@ namespace CapaPresentacion
         }
         public void EliminarArea(int idArea)
         {
-            string connectionString = "Server=DESKTOP-7O3687Q;Database=bdProyectoBimbo;Integrated Security=True;";
+            string connectionString = "Data Source=DESKTOP-7O3687Q;Initial Catalog=bdProyectoBimbo;Integrated Security=True;";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

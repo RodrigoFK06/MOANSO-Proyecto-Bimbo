@@ -8,43 +8,43 @@ using System.Threading.Tasks;
 
 namespace CapaLogicaNegocio
 {
-    public class EmpleadoLogica
+    public class CronogramaLogica
     {
-        private EmpleadoDatos empleadoDatos;
+        private CronogramaDatos CronogramaDatos;
 
-        public EmpleadoLogica()
+        public CronogramaLogica()
         {
-            empleadoDatos = new EmpleadoDatos();
+            CronogramaDatos = new CronogramaDatos();
         }
 
-        public void CrearEmpleado(Empleado empleado)
+        public void CrearCronograma(Cronograma Cronograma)
         {
             // Puedes agregar lógica adicional aquí antes de llamar a la capa de acceso a datos.
-            empleadoDatos.CrearEmpleado(empleado);
+            CronogramaDatos.CrearCronograma(Cronograma);
         }
 
-        public List<Empleado> LeerEmpleados()
+        public List<Cronograma> LeerCronograma()
         {
             // Puedes agregar lógica adicional aquí antes de llamar a la capa de acceso a datos.
-            return empleadoDatos.LeerEmpleados();
+            return CronogramaDatos.LeerCronograma();
         }
 
-        public Empleado LeerEmpleadoPorID(int idEmpleado)
+        public Cronograma LeerCronogramaPorID(int idCronograma)
         {
             // Puedes agregar lógica adicional aquí antes de llamar a la capa de acceso a datos.
-            return empleadoDatos.LeerEmpleadoPorID(idEmpleado);
+            return CronogramaDatos.LeerCronogramaPorID(idCronograma);
         }
 
-        public void ActualizarEmpleado(Empleado empleado)
+        public void ActualizarCronograma(Cronograma Cronograma)
         {
             // Puedes agregar lógica adicional aquí antes de llamar a la capa de acceso a datos.
-            empleadoDatos.ActualizarEmpleado(empleado);
+            CronogramaDatos.ActualizarCronograma(Cronograma);
         }
 
-        public void EliminarEmpleado(int idEmpleado)
+        public void EliminarCronograma(int idCronograma)
         {
             // Puedes agregar lógica adicional aquí antes de llamar a la capa de acceso a datos.
-            empleadoDatos.EliminarEmpleado(idEmpleado);
+            CronogramaDatos.EliminarCronograma(idCronograma);
         }
     }
 }

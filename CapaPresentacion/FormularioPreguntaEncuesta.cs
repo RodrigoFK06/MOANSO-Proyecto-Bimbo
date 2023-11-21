@@ -182,7 +182,7 @@ namespace CapaPresentacion
         }
         public void EliminarPregunta(int idPregunta)
         {
-            string connectionString = "Server=DESKTOP-7O3687Q;Database=bdProyectoBimbo;Integrated Security=True;";
+            string connectionString = "Data Source=DESKTOP-7O3687Q;Initial Catalog=bdProyectoBimbo;Integrated Security=True;";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

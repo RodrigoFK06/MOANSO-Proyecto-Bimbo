@@ -9,47 +9,24 @@ using System.Threading.Tasks;
 
 namespace CapaAccesoDatos
 {
-    public class EmpleadoDatos
+    public class EmpleadoDatos : Conexion
     {
-        private string connectionString;
-
-        public EmpleadoDatos(string connectionString)
-        {
-            this.connectionString = connectionString;
-        }
-
-        public void CrearEmpleado(Empleado empleado)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "CrearEmpleado"; // Reemplaza con el nombre real del procedimiento almacenado de CrearEmpleado
-                using (SqlCommand cmd = new SqlCommand(query, connection))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Nombre", empleado.Nombre);
-                    cmd.Parameters.AddWithValue("@Apellido", empleado.Apellido);
-                    cmd.Parameters.AddWithValue("@FechaContratacion", empleado.FechaContratacion);
-                    cmd.Parameters.AddWithValue("@Puesto", empleado.Puesto);
-                    cmd.Parameters.AddWithValue("@Area", empleado.Area);
-
-                    connection.Open();
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
-                }
-            }
-        }
-
         public List<Empleado> LeerEmpleados()
         {
             List<Empleado> empleados = new List<Empleado>();
-            using (SqlConnection connection = new SqlConnection(connectionString))
+
+            using (SqlConnection conexion = ObtenerConexion())
             {
-                string query = "LeerEmpleado"; // Reemplaza con el nombre real del procedimiento almacenado de LeerEmpleados
-                using (SqlCommand cmd = new SqlCommand(query, connection))
+                conexion.Open();
+
+                string query = "GetEmpleados"; // Reemplaza con el nombre real del procedimiento almacenado de LeerEmpleados
+
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
+
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    connection.Open();
+
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -57,7 +34,7 @@ namespace CapaAccesoDatos
                             Empleado empleado = new Empleado
                             {
                                 IdEmpleado = Convert.ToInt32(reader["IdEmpleado"]),
-                                Nombre = reader["Nombre"].ToString(),
+                                Nombre = reader["NombreEmpleado"].ToString(),
                                 Apellido = reader["Apellido"].ToString(),
                                 FechaContratacion = Convert.ToDateTime(reader["FechaContratacion"]),
                                 Puesto = reader["Puesto"].ToString(),
@@ -66,24 +43,51 @@ namespace CapaAccesoDatos
                             empleados.Add(empleado);
                         }
                     }
-                    connection.Close();
+                    conexion.Close();
                 }
             }
             return empleados;
         }
 
+        public void CrearEmpleado(Empleado empleado)
+        {
+            using (SqlConnection conexion = ObtenerConexion())
+            {
+                conexion.Open();
+
+                string query = "InsertEmpleado"; // Reemplaza con el nombre real del procedimiento almacenado de CrearEmpleado
+
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@NombreEmpleado", empleado.Nombre);
+                    cmd.Parameters.AddWithValue("@Apellido", empleado.Apellido);
+                    cmd.Parameters.AddWithValue("@FechaContratacion", empleado.FechaContratacion);
+                    // cmd.Parameters.AddWithValue("@Puesto", empleado.Puesto);
+                    cmd.Parameters.AddWithValue("@Area", empleado.Area);
+
+
+                    cmd.ExecuteNonQuery();
+                    conexion.Close();
+                }
+            }
+        }
+
         public Empleado LeerEmpleadoPorID(int idEmpleado)
         {
             Empleado empleado = null;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection conexion = ObtenerConexion())
             {
-                string query = "LeerEmpleadoPorID"; // Reemplaza con el nombre real del procedimiento almacenado de LeerEmpleadoPorID
-                using (SqlCommand cmd = new SqlCommand(query, connection))
+                conexion.Open();
+
+                string query = "GetEmpleadoPorID"; // Reemplaza con el nombre real del procedimiento almacenado de LeerEmpleadoPorID
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@IdEmpleado", idEmpleado);
 
-                    connection.Open();
+
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
@@ -91,7 +95,7 @@ namespace CapaAccesoDatos
                             empleado = new Empleado
                             {
                                 IdEmpleado = Convert.ToInt32(reader["IdEmpleado"]),
-                                Nombre = reader["Nombre"].ToString(),
+                                Nombre = reader["NombreEmpleado"].ToString(),
                                 Apellido = reader["Apellido"].ToString(),
                                 FechaContratacion = Convert.ToDateTime(reader["FechaContratacion"]),
                                 Puesto = reader["Puesto"].ToString(),
@@ -99,7 +103,7 @@ namespace CapaAccesoDatos
                             };
                         }
                     }
-                    connection.Close();
+                    conexion.Close();
                 }
             }
             return empleado;
@@ -107,39 +111,42 @@ namespace CapaAccesoDatos
 
         public void ActualizarEmpleado(Empleado empleado)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection conexion = ObtenerConexion())
             {
-                string query = "ActualizarEmpleado"; // Reemplaza con el nombre real del procedimiento almacenado de ActualizarEmpleado
-                using (SqlCommand cmd = new SqlCommand(query, connection))
+                conexion.Open();
+
+                string query = "UpdateEmpleado"; // Reemplaza con el nombre real del procedimiento almacenado de ActualizarEmpleado
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@IdEmpleado", empleado.IdEmpleado);
-                    cmd.Parameters.AddWithValue("@Nombre", empleado.Nombre);
+                    cmd.Parameters.AddWithValue("@idEmpleado", empleado.IdEmpleado);
+                    cmd.Parameters.AddWithValue("@NombreEmpleado", empleado.Nombre);
                     cmd.Parameters.AddWithValue("@Apellido", empleado.Apellido);
                     cmd.Parameters.AddWithValue("@FechaContratacion", empleado.FechaContratacion);
                     cmd.Parameters.AddWithValue("@Puesto", empleado.Puesto);
                     cmd.Parameters.AddWithValue("@Area", empleado.Area);
 
-                    connection.Open();
                     cmd.ExecuteNonQuery();
-                    connection.Close();
+                    conexion.Close();
                 }
             }
         }
 
         public void EliminarEmpleado(int idEmpleado)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection conexion = ObtenerConexion())
             {
-                string query = "EliminarEmpleado"; // Reemplaza con el nombre real del procedimiento almacenado de EliminarEmpleado
-                using (SqlCommand cmd = new SqlCommand(query, connection))
+                conexion.Open();
+
+                string query = "DeleteEmpleado"; // Reemplaza con el nombre real del procedimiento almacenado de EliminarEmpleado
+                using (SqlCommand cmd = new SqlCommand(query, conexion))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@IdEmpleado", idEmpleado);
 
-                    connection.Open();
+
                     cmd.ExecuteNonQuery();
-                    connection.Close();
+                    conexion.Close();
                 }
             }
         }
