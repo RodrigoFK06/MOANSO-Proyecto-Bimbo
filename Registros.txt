@@ -1,0 +1,187 @@
+-- Insertar registros en la tabla Empleado
+INSERT INTO [dbo].[Empleado] ([NombreEmpleado], [Apellido], [FechaContratacion], [Puesto], [Area])
+VALUES 
+    ('Juan', 'Pérez', '2022-01-01', 'Analista', 'Recursos Humanos'),
+    ('María', 'González', '2022-02-15', 'Desarrollador', 'Tecnología'),
+    ('Pedro', 'Ramírez', '2022-03-10', 'Gerente', 'Operaciones'),
+    ('Laura', 'López', '2022-04-20', 'Contador', 'Finanzas'),
+    ('Ana', 'Martínez', '2022-05-05', 'Diseñador', 'Marketing');
+
+-- Insertar registros en la tabla Actividad
+INSERT INTO [dbo].[Actividad] ([NombreActividad], [Descripcion])
+VALUES 
+    ('Capacitación en SQL', 'Curso para mejorar habilidades en SQL Server'),
+    ('Desarrollo de Proyecto', 'Implementación de un nuevo sistema'),
+    ('Reunión de Equipo', 'Discusión de estrategias y metas'),
+    ('Auditoría Financiera', 'Revisión de estados financieros'),
+    ('Taller de Diseño Gráfico', 'Mejora de habilidades en herramientas de diseño');
+
+-- Insertar registros en la tabla Area
+INSERT INTO [dbo].[Area] ([Nombre], [Descripcion])
+VALUES 
+    ('Recursos Humanos', 'Gestión del personal y relaciones laborales'),
+    ('Tecnología', 'Desarrollo y mantenimiento de sistemas'),
+    ('Operaciones', 'Gestión de operaciones y logística'),
+    ('Finanzas', 'Control y gestión financiera'),
+    ('Marketing', 'Promoción y publicidad de productos');
+
+-- Insertar registros en la tabla EstandarCompetencia
+INSERT INTO [dbo].[EstandarCompetencia] ([NivelRequerido], [Descripcion], [idArea])
+VALUES 
+    (1, 'Conocimientos avanzados en programación', 1),
+    (2, 'Habilidades de liderazgo', 2),
+    (3, 'Experiencia en auditoría financiera', 3),
+    (4, 'Diseño creativo y originalidad', 4),
+    (5, 'Gestión eficiente de recursos humanos', 5);
+
+	-- Insertar registros en la tabla EvaluacionDesempeño
+INSERT INTO [dbo].[EvaluacionDesempeño] ([FechaCreacion], [FechaCierre], [Titulo], [Descripcion], [idArea])
+VALUES 
+    ('2023-01-01', '2023-01-15', 'Evaluación Anual', 'Evaluar el desempeño del personal', 1),
+    ('2023-02-01', '2023-02-15', 'Proyecto Especial', 'Evaluar el desempeño en un proyecto específico', 2),
+    ('2023-03-01', '2023-03-15', 'Evaluación Trimestral', 'Revisión trimestral del rendimiento', 3),
+    ('2023-04-01', '2023-04-15', 'Desarrollo Profesional', 'Evaluar las necesidades de desarrollo profesional', 4),
+    ('2023-05-01', '2023-05-15', 'Innovación y Creatividad', 'Evaluar la contribución a la innovación y creatividad', 5);
+
+-- Insertar registros en la tabla PreguntasEvaluacionDesempeño
+INSERT INTO [dbo].[PreguntasEvaluacionDesempeño] ([Pregunta], [Opcion1], [Opcion2], [Opcion3], [Opcion4], [Respuesta], [idEvaluacionDesempeño])
+VALUES 
+    ('¿Cumple con los objetivos establecidos?', 'Sí', 'No', 'En parte', 'No aplica', 'Sí', 1),
+    ('¿Demuestra liderazgo en su equipo?', 'Sí', 'No', 'En parte', 'No aplica', 'Sí', 2),
+    ('¿Logra cumplir con los plazos de entrega?', 'Sí', 'No', 'En parte', 'No aplica', 'Sí', 3),
+    ('¿Participa en actividades de desarrollo profesional?', 'Sí', 'No', 'En parte', 'No aplica', 'Sí', 4),
+    ('¿Aporta ideas innovadoras al equipo?', 'Sí', 'No', 'En parte', 'No aplica', 'Sí', 5);
+
+
+-- Insertar registros en la tabla DetalleEvaluacionDesempeño
+INSERT INTO [dbo].[DetalleEvaluacionDesempeño] ([Nota], [idPreguntasEvaluacionDesempeño])
+VALUES 
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5);
+
+-- Insertar registros en la tabla ResolucionEvaluacionDesempeño
+INSERT INTO [dbo].[ResolucionEvaluacionDesempeño] ([Fecha], [NotaTotal], [Comentarios], [idDetalleEvaluacionDesempeño], [idEmpleado])
+VALUES 
+    ('2023-01-20', 20, 'Buen rendimiento global', 1, 1),
+    ('2023-02-20', 25, 'Excelente liderazgo', 2, 2),
+    ('2023-03-20', 15, 'Necesita mejorar en cumplir plazos', 3, 3),
+    ('2023-04-20', 18, 'Participación constante en capacitación', 4, 4),
+    ('2023-05-20', 25, 'Contribución sobresaliente a la innovación', 5, 5);
+
+	-- Insertar registros en la tabla Empleado
+INSERT INTO [dbo].[Empleado] ([NombreEmpleado], [Apellido], [FechaContratacion], [Puesto], [Area])
+VALUES 
+    ('Juan', 'Pérez', '2022-01-01', 'Analista', 'Recursos Humanos'),
+    ('María', 'González', '2022-02-15', 'Desarrollador', 'Tecnología'),
+    ('Pedro', 'Ramírez', '2022-03-10', 'Gerente', 'Operaciones'),
+    ('Laura', 'López', '2022-04-20', 'Contador', 'Finanzas'),
+    ('Ana', 'Martínez', '2022-05-05', 'Diseñador', 'Marketing');
+
+-- Insertar registros en la tabla Actividad
+INSERT INTO [dbo].[Actividad] ([NombreActividad], [Descripcion])
+VALUES 
+    ('Capacitación en SQL', 'Curso para mejorar habilidades en SQL Server'),
+    ('Desarrollo de Proyecto', 'Implementación de un nuevo sistema'),
+    ('Reunión de Equipo', 'Discusión de estrategias y metas'),
+    ('Auditoría Financiera', 'Revisión de estados financieros'),
+    ('Taller de Diseño Gráfico', 'Mejora de habilidades en herramientas de diseño');
+-- Insertar registros en la tabla Area
+INSERT INTO [dbo].[Area] ([Nombre], [Descripcion])
+VALUES 
+    ('Recursos Humanos', 'Gestión del personal y relaciones laborales'),
+    ('Tecnología', 'Desarrollo y mantenimiento de sistemas'),
+    ('Operaciones', 'Gestión de operaciones y logística'),
+    ('Finanzas', 'Control y gestión financiera'),
+    ('Marketing', 'Promoción y publicidad de productos');
+-- Insertar registros en la tabla EstandarCompetencia
+INSERT INTO [dbo].[EstandarCompetencia] ([NivelRequerido], [Descripcion], [idArea])
+VALUES 
+    (3, 'Conocimientos avanzados en programación', 1),
+    (2, 'Habilidades de liderazgo', 2),
+    (4, 'Experiencia en auditoría financiera', 3),
+    (3, 'Diseño creativo y originalidad', 4),
+    (4, 'Gestión eficiente de recursos humanos', 5);
+-- Insertar registros en la tabla EvaluacionDesempeño
+INSERT INTO [dbo].[EvaluacionDesempeño] ([FechaCreacion], [FechaCierre], [Titulo], [Descripcion], [idArea])
+VALUES 
+    ('2023-01-01', '2023-01-15', 'Evaluación Anual', 'Evaluar el desempeño del personal', 1),
+    ('2023-02-01', '2023-02-15', 'Proyecto Especial', 'Evaluar el desempeño en un proyecto específico', 2),
+    ('2023-03-01', '2023-03-15', 'Evaluación Trimestral', 'Revisión trimestral del rendimiento', 3),
+    ('2023-04-01', '2023-04-15', 'Desarrollo Profesional', 'Evaluar las necesidades de desarrollo profesional', 4),
+    ('2023-05-01', '2023-05-15', 'Innovación y Creatividad', 'Evaluar la contribución a la innovación y creatividad', 5);
+-- Insertar registros en la tabla PreguntasEvaluacionDesempeño
+INSERT INTO [dbo].[PreguntasEvaluacionDesempeño] ([Pregunta], [Opcion1], [Opcion2], [Opcion3], [Opcion4], [Respuesta], [idEvaluacionDesempeño])
+VALUES 
+    ('¿Cumple con los objetivos establecidos?', 'Sí', 'No', 'En parte', 'No aplica', 'Sí', 1),
+    ('¿Demuestra liderazgo en su equipo?', 'Sí', 'No', 'En parte', 'No aplica', 'Sí', 2),
+    ('¿Logra cumplir con los plazos de entrega?', 'Sí', 'No', 'En parte', 'No aplica', 'Sí', 3),
+    ('¿Participa en actividades de desarrollo profesional?', 'Sí', 'No', 'En parte', 'No aplica', 'Sí', 4),
+    ('¿Aporta ideas innovadoras al equipo?', 'Sí', 'No', 'En parte', 'No aplica', 'Sí', 5);
+-- Insertar registros en la tabla DetalleEvaluacionDesempeño
+INSERT INTO [dbo].[DetalleEvaluacionDesempeño] ([Nota], [idPreguntasEvaluacionDesempeño])
+VALUES 
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5);
+-- Insertar registros en la tabla ResolucionEvaluacionDesempeño
+INSERT INTO [dbo].[ResolucionEvaluacionDesempeño] ([Fecha], [NotaTotal], [Comentarios], [idDetalleEvaluacionDesempeño], [idEmpleado])
+VALUES 
+    ('2023-01-20', 20, 'Buen rendimiento global', 1, 1),
+    ('2023-02-20', 25, 'Excelente liderazgo', 2, 2),
+    ('2023-03-20', 15, 'Necesita mejorar en cumplir plazos', 3, 3),
+    ('2023-04-20', 18, 'Participación constante en capacitación', 4, 4),
+    ('2023-05-20', 25, 'Contribución sobresaliente a la innovación', 5, 5);
+-- Insertar registros en la tabla NecesidadesFormativas
+INSERT INTO [dbo].[NecesidadesFormativas] ([FechaCreacion], [FechaImplementacion], [Necesidades], [idEstandarCompetencia], [idResolucionEvaluacionDesempeño])
+VALUES 
+    ('2023-01-25', '2023-02-15', 'Curso avanzado de programación en SQL', 1, 1),
+    ('2023-02-10', '2023-03-01', 'Seminario de liderazgo', 2, 2),
+    ('2023-03-15', '2023-04-01', 'Curso de auditoría financiera', 3, 3),
+    ('2023-04-25', '2023-05-10', 'Taller de diseño creativo', 4, 4),
+    ('2023-05-05', '2023-05-25', 'Capacitación en gestión de recursos humanos', 5, 5);
+-- Insertar registros en la tabla Encuesta
+INSERT INTO [dbo].[Encuesta] ([FechaCreacion], [FechaCierre], [Titulo], [idArea], [idEmpleado])
+VALUES 
+    ('2023-01-01', '2023-01-15', 'Encuesta de Satisfacción Laboral', 1, 1),
+    ('2023-02-01', '2023-02-15', 'Encuesta de Proyecto Especial', 2, 2),
+    ('2023-03-01', '2023-03-15', 'Encuesta de Evaluación Trimestral', 3, 3),
+    ('2023-04-01', '2023-04-15', 'Encuesta de Desarrollo Profesional', 4, 4),
+    ('2023-05-01', '2023-05-15', 'Encuesta de Innovación y Creatividad', 5, 5);
+-- Insertar registros en la tabla PreguntasEncuesta
+INSERT INTO [dbo].[PreguntasEncuesta] ([Pregunta], [Opcion1], [Opcion2], [Opcion3], [Opcion4], [idEncuesta])
+VALUES 
+    ('¿Está satisfecho con su entorno de trabajo?', 'Sí', 'No', 'En parte', 'No aplica', 1),
+    ('¿Cómo calificaría la gestión del proyecto?', 'Excelente', 'Bueno', 'Regular', 'Deficiente', 2),
+    ('¿Cómo evalúa el ambiente laboral en su área?', 'Positivo', 'Neutral', 'Negativo', 'No aplica', 3),
+    ('¿Ha recibido oportunidades de desarrollo profesional?', 'Sí', 'No', 'En parte', 'No aplica', 4),
+    ('¿Considera que se fomenta la innovación en la empresa?', 'Sí', 'No', 'En parte', 'No aplica', 5);
+-- Insertar registros en la tabla ResolucionEncuesta
+INSERT INTO [dbo].[ResolucionEncuesta] ([Fecha], [idPreguntasEncuesta], [idEmpleado])
+VALUES 
+    ('2023-01-20', 1, 1),
+    ('2023-02-20', 2, 2),
+    ('2023-03-20', 3, 3),
+    ('2023-04-20', 4, 4),
+    ('2023-05-20', 5, 5);
+-- Insertar registros en la tabla Cronograma
+INSERT INTO [dbo].[Cronograma] ([Titulo], [Descripcion], [FechaInicio], [FechaFin], [idResolucionEncuesta], [idEmpleado], [idActividad])
+VALUES 
+    ('Plan de Capacitación', 'Implementación de cursos de capacitación', '2023-01-25', '2023-02-28', 1, 1, 1),
+    ('Desarrollo de Proyecto', 'Fase de planificación y diseño', '2023-02-15', '2023-04-30', 2, 2, 2),
+    ('Reuniones Estratégicas', 'Discusión de metas trimestrales', '2023-03-01', '2023-03-15', 3, 3, 3),
+    ('Programa de Desarrollo Profesional', 'Implementación de cursos y talleres', '2023-04-01', '2023-05-15', 4, 4, 4),
+    ('Innovación y Creatividad', 'Sesiones de lluvia de ideas y proyectos', '2023-05-01', '2023-05-31', 5, 5, 5);
+
+-- Insertar registros en la tabla PlanDesarrolloFormativo
+INSERT INTO [dbo].[PlanDesarrolloFormativo] ([FechaCreacion], [FechaInicio], [FechaFin], [Objetivos], [idCronograma], [idNecesidadesFormativas])
+VALUES 
+    ('2023-01-25', '2023-02-01', '2023-02-28', 'Mejorar habilidades en SQL Server', 1, 1),
+    ('2023-02-10', '2023-02-15', '2023-04-30', 'Desarrollo exitoso del proyecto', 2, 2),
+    ('2023-03-15', '2023-04-01', '2023-05-15', 'Alcanzar metas trimestrales', 3, 3),
+    ('2023-04-25', '2023-05-01', '2023-05-15', 'Avanzar en desarrollo profesional', 4, 4),
+    ('2023-05-05', '2023-05-01', '2023-05-31', 'Fomentar la innovación y creatividad', 5, 5);
