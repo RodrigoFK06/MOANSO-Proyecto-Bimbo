@@ -53,6 +53,12 @@
     <Compile Include="FormularioActividadesDeCapacitaciones.Designer.cs">
       <DependentUpon>FormularioActividadesDeCapacitaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioAreas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioAreas.Designer.cs">
+      <DependentUpon>FormularioAreas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioCronograma.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,12 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioPreguntaEncuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPreguntaEncuesta.Designer.cs">
+      <DependentUpon>FormularioPreguntaEncuesta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -157,6 +169,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FormularioActividadesDeCapacitaciones.resx">
       <DependentUpon>FormularioActividadesDeCapacitaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioAreas.resx">
+      <DependentUpon>FormularioAreas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioCronograma.resx">
       <DependentUpon>FormularioCronograma.cs</DependentUpon>
@@ -199,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPreguntaEncuesta.resx">
+      <DependentUpon>FormularioPreguntaEncuesta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

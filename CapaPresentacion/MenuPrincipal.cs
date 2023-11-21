@@ -246,12 +246,12 @@ namespace CapaPresentacion
 
         private void btnActividades_Click(object sender, EventArgs e)
         {
-            abrirFormActividades(new FormularioActividades());
+            //abrirFormActividades(new FormularioActividades());
         }
 
         private void btnAsistencias_Click(object sender, EventArgs e)
         {
-            abrirFormAsistencias(new FormularioAsistencias());
+            abrirFormAsistencias(new FormularioAreas());
         }
 
         private void btnEncuestas_Click(object sender, EventArgs e)
@@ -281,7 +281,7 @@ namespace CapaPresentacion
 
         private void btnResultadoDesempeño_Click(object sender, EventArgs e)
         {
-            abrirResDesempeño(new FormularioResultadoDesempeño());
+            abrirResDesempeño(new FormularioPreguntaEncuesta());
         }
 
         private void btnDocNecesidadesFormativas_Click(object sender, EventArgs e)

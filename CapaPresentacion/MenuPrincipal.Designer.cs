@@ -36,6 +36,7 @@
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnResultadosProgreso = new System.Windows.Forms.Button();
             this.btnPlanDesarrolloFormativo = new System.Windows.Forms.Button();
             this.btnDocNecesidadesFormativas = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.imagenLogo = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.barraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -164,6 +164,25 @@
             this.MenuVertical.Size = new System.Drawing.Size(220, 612);
             this.MenuVertical.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(12, 680);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(202, 32);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Resol. Progreso";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnResultadosProgreso
             // 
             this.btnResultadosProgreso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
@@ -234,9 +253,9 @@
             this.btnResultadoDesempeño.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnResultadoDesempeño.Location = new System.Drawing.Point(12, 500);
             this.btnResultadoDesempeño.Name = "btnResultadoDesempeño";
-            this.btnResultadoDesempeño.Size = new System.Drawing.Size(202, 32);
+            this.btnResultadoDesempeño.Size = new System.Drawing.Size(240, 32);
             this.btnResultadoDesempeño.TabIndex = 9;
-            this.btnResultadoDesempeño.Text = "Res. Desempeño";
+            this.btnResultadoDesempeño.Text = "Preguntas Encuesta";
             this.btnResultadoDesempeño.UseVisualStyleBackColor = false;
             this.btnResultadoDesempeño.Click += new System.EventHandler(this.btnResultadoDesempeño_Click);
             // 
@@ -350,7 +369,7 @@
             this.btnAsistencias.Name = "btnAsistencias";
             this.btnAsistencias.Size = new System.Drawing.Size(202, 32);
             this.btnAsistencias.TabIndex = 3;
-            this.btnAsistencias.Text = "Asistencias";
+            this.btnAsistencias.Text = "Areas";
             this.btnAsistencias.UseVisualStyleBackColor = false;
             this.btnAsistencias.Click += new System.EventHandler(this.btnAsistencias_Click);
             // 
@@ -410,25 +429,6 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1080, 612);
             this.panelContenedor.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(12, 680);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 32);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Resol. Progreso";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MenuPrincipal
             // 
