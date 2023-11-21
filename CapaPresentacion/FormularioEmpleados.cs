@@ -15,22 +15,11 @@ namespace CapaPresentacion
     public partial class FormularioEmpleados : Form
     {
         private EmpleadoLogica empleadoLogica;
-        private string connectionString = "Server=TONY;Database=bdProyectoBimbo; Integrated Security=True;";// Reemplaza con tu cadena de conexión;
+        private Empleado empleadoSeleccionado;
         public FormularioEmpleados()
         {
             InitializeComponent();
-            // Establece el controlador de eventos para el evento SelectionChanged del DataGridView
-            listaEmpleados.SelectionChanged += listaEmpleados_SelectionChanged;
-            this.connectionString = connectionString;
-            empleadoLogica = new EmpleadoLogica(connectionString);
-
-            // Configura las columnas del DataGridView
-            listaEmpleados.Columns.Add("IdEmpleado", "ID");
-            listaEmpleados.Columns.Add("Nombre", "Nombre");
-            listaEmpleados.Columns.Add("Apellido", "Apellido");
-            listaEmpleados.Columns.Add("FechaContratacion", "Fecha Contratación");
-            listaEmpleados.Columns.Add("Puesto", "Puesto");
-            listaEmpleados.Columns.Add("Area", "Área");
+            empleadoLogica = new EmpleadoLogica();
 
             CargarEmpleados();
         }
@@ -39,41 +28,35 @@ namespace CapaPresentacion
             txtNombre.Text = "";
             txtApellido.Text = "";
             pickerFechaContratacion.Value = DateTime.Now;
-            cbPuesto.Text = "";
-            cbArea.Text = "";
-           
+            //comboPuesto.Text = "";
+            //comboArea.Text = "";
+
         }
 
         private void CargarEmpleados()
         {
-            List<Empleado> empleados = empleadoLogica.LeerEmpleados();
-            listaEmpleados.Rows.Clear();
-
-            foreach (var empleado in empleados)
-            {
-                listaEmpleados.Rows.Add(empleado.IdEmpleado, empleado.Nombre, empleado.Apellido, empleado.FechaContratacion, empleado.Puesto, empleado.Area);
-            }
+            listaEmpleados.DataSource = empleadoLogica.LeerEmpleados();
         }
 
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string nombre = txtNombre.Text;
-            string apellido = txtApellido.Text;
-            DateTime fechaContratacion = pickerFechaContratacion.Value;
-            string puesto = cbPuesto.Text;
-            string area = cbArea.Text;
-
-            Empleado empleado = new Empleado
+            if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtApellido.Text))
             {
-                Nombre = nombre,
-                Apellido = apellido,
-                FechaContratacion = fechaContratacion,
-                Puesto = puesto,
-                Area = area
+                MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Empleado nuevoEmpleado = new Empleado
+            {
+                Nombre = txtNombre.Text,
+                Apellido = txtApellido.Text,
+                FechaContratacion = pickerFechaContratacion.Value,
+                //Puesto = Convert.ToInt32(comboPuesto.SelectedValue),
+                //Area = Convert.ToInt32(comboArea.SelectedValue)
             };
 
-            empleadoLogica.CrearEmpleado(empleado);
+            empleadoLogica.CrearEmpleado(nuevoEmpleado);
 
             CargarEmpleados();
             LimpiarCampos();
@@ -84,65 +67,77 @@ namespace CapaPresentacion
         {
             if (listaEmpleados.SelectedRows.Count > 0)
             {
-                DataGridViewRow selectedRow = listaEmpleados.SelectedRows[0];
-
-                // Obtiene los valores de las celdas seleccionadas
-                int idEmpleado = Convert.ToInt32(selectedRow.Cells["IdEmpleado"].Value);
-                string nombre = selectedRow.Cells["Nombre"].Value.ToString();
-                string apellido = selectedRow.Cells["Apellido"].Value.ToString();
-                DateTime fechaContratacion = Convert.ToDateTime(selectedRow.Cells["FechaContratacion"].Value);
-                string puesto = selectedRow.Cells["Puesto"].Value.ToString();
-                string area = selectedRow.Cells["Area"].Value.ToString();
-
+                // Obtener el cliente seleccionado de la fila actual
+                empleadoSeleccionado = (Empleado)listaEmpleados.SelectedRows[0].DataBoundItem;
                 // Carga los datos en los campos de texto
-                txtNombre.Text = nombre;
-                txtApellido.Text = apellido;
-                pickerFechaContratacion.Value = fechaContratacion;
-                cbPuesto.Text = puesto;
-                cbArea.Text = area;
+                txtNombre.Text = empleadoSeleccionado.Nombre;
+                txtApellido.Text = empleadoSeleccionado.Apellido;
+                pickerFechaContratacion.Value = empleadoSeleccionado.FechaContratacion;
+                //comboPuesto.Text = empleadoSeleccionado.Puesto;
+                //comboArea.Text = empleadoSeleccionado.Area;
             }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            // Habilita los campos de texto para editar
-            txtNombre.Enabled = true;
-            txtApellido.Enabled = true;
-            pickerFechaContratacion.Enabled = true;
-            cbPuesto.Enabled = true;
-            cbArea.Enabled = true;
+            if (empleadoSeleccionado != null)
+            {
+                // Actualizar el objeto empleadoSeleccionado con los datos modificados
+                empleadoSeleccionado.Nombre = txtNombre.Text;
+                empleadoSeleccionado.Apellido = txtApellido.Text;
+                empleadoSeleccionado.FechaContratacion = pickerFechaContratacion.Value;
+                //empleadoSeleccionado.Sueldo = Convert.ToInt32(txtSueldo.Text);
+                //empleadoSeleccionado.Direccion = txtDireccion.Text;
 
-            // Cambia el texto del botón "Guardar" a "Guardar Cambios"
-            btnGuardar.Text = "Guardar Cambios";
+                // Llamar al método de la lógica para editar el empleado
+                empleadoLogica.ActualizarEmpleado(empleadoSeleccionado);
 
-            // Deshabilita el botón "Editar"
-            btnEditar.Enabled = false;
+                // Actualizar la vista con los empleados actualizados
+                CargarEmpleados();
+
+                // Limpiar los campos después de guardar
+                LimpiarCampos();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un empleado para editar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (listaEmpleados.SelectedRows.Count > 0)
+            if (empleadoSeleccionado != null)
             {
-                // Pregunta al usuario si está seguro de que desea eliminar el empleado
-                DialogResult confirmResult = MessageBox.Show("¿Está seguro de que desea eliminar este empleado?", "Confirmación de eliminación", MessageBoxButtons.YesNo);
+                // Mostrar un cuadro de diálogo de confirmación
+                DialogResult resultado = MessageBox.Show("¿Está seguro de que desea eliminar este empleado?", "Confirmación de Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if (confirmResult == DialogResult.Yes)
+                if (resultado == DialogResult.Yes)
                 {
-                    // Obtiene el ID del empleado seleccionado
-                    int idEmpleado = Convert.ToInt32(listaEmpleados.SelectedRows[0].Cells["IDEmpleado"].Value); // Reemplaza "IDEmpleado" con el nombre de la columna real
+                    // Llamar al método de la lógica para eliminar el empleado
+                    empleadoLogica.EliminarEmpleado(empleadoSeleccionado.IdEmpleado);
 
-                    // Llama al método para eliminar el empleado
-                    empleadoLogica.EliminarEmpleado(idEmpleado);
-
-                    // Refresca el DataGridView para reflejar los cambios
+                    // Actualizar la vista con los empleados actualizados
                     CargarEmpleados();
+
+                    // Limpiar los campos después de eliminar
+                    LimpiarCampos();
                 }
             }
             else
             {
-                MessageBox.Show("Seleccione un empleado para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, seleccione un empleado para eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void FormularioEmpleados_Load(object sender, EventArgs e)
+        {
+            CargarEmpleados();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
         }
     }
 }

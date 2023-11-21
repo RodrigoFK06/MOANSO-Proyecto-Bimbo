@@ -8,43 +8,43 @@ using System.Threading.Tasks;
 
 namespace CapaLogicaNegocio
 {
-    public class EmpleadoLogica
+    public class ActividadLogica
     {
-        private EmpleadoDatos empleadoDatos;
+        private ActividadDatos ActividadDatos;
 
-        public EmpleadoLogica()
+        public ActividadLogica()
         {
-            empleadoDatos = new EmpleadoDatos();
+            ActividadDatos = new ActividadDatos();
         }
 
-        public void CrearEmpleado(Empleado empleado)
+        public void CrearActividad(Actividad Actividad)
         {
             // Puedes agregar lógica adicional aquí antes de llamar a la capa de acceso a datos.
-            empleadoDatos.CrearEmpleado(empleado);
+            ActividadDatos.CrearActividad(Actividad);
         }
 
-        public List<Empleado> LeerEmpleados()
+        public List<Actividad> LeerActividad()
         {
             // Puedes agregar lógica adicional aquí antes de llamar a la capa de acceso a datos.
-            return empleadoDatos.LeerEmpleados();
+            return ActividadDatos.LeerActividad();
         }
 
-        public Empleado LeerEmpleadoPorID(int idEmpleado)
+        public Actividad LeerActividadPorID(int idActividad)
         {
             // Puedes agregar lógica adicional aquí antes de llamar a la capa de acceso a datos.
-            return empleadoDatos.LeerEmpleadoPorID(idEmpleado);
+            return ActividadDatos.LeerActividadPorID(idActividad);
         }
 
-        public void ActualizarEmpleado(Empleado empleado)
+        public void ActualizarActividad(Actividad Actividad)
         {
             // Puedes agregar lógica adicional aquí antes de llamar a la capa de acceso a datos.
-            empleadoDatos.ActualizarEmpleado(empleado);
+            ActividadDatos.ActualizarActividad(Actividad);
         }
 
-        public void EliminarEmpleado(int idEmpleado)
+        public void EliminarActividad(int idActividad)
         {
             // Puedes agregar lógica adicional aquí antes de llamar a la capa de acceso a datos.
-            empleadoDatos.EliminarEmpleado(idEmpleado);
+            ActividadDatos.EliminarActividad(idActividad);
         }
     }
 }
