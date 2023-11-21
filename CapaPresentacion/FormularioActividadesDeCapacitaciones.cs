@@ -152,5 +152,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void FormularioActividadesDeCapacitaciones_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

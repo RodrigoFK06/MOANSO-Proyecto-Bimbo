@@ -192,6 +192,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioActividadesDeCapacitaciones";
             this.Text = "FormularioActividadesDeCapacitaciones";
+            this.Load += new System.EventHandler(this.FormularioActividadesDeCapacitaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listaActividades)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

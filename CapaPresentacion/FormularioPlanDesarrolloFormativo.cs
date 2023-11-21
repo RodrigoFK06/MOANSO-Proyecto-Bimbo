@@ -15,7 +15,7 @@ namespace CapaPresentacion
 {
     public partial class FormularioPlanDesarrolloFormativo : Form
     {
-        private readonly string cadenaConexion = "Data Source=TONY;Initial Catalog=ProyectoBimboBD;Integrated Security=True;";
+        private readonly string cadenaConexion = "Data Source=DESKTOP-7O3687Q;Initial Catalog=bdProyectoBimbo;Integrated Security=True;";
         private NecesidadesFormativasLogica necesidadesFormativasLogica;
         private CronogramaLogica cronogramaLogica;
         private PlanDesarrolloFormativoLogica planDesarrolloFormativoLogica;

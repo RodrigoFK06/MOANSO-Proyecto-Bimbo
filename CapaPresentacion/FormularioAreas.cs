@@ -179,7 +179,7 @@ namespace CapaPresentacion
         }
         public void EliminarArea(int idArea)
         {
-            string connectionString = "Server=TONY;Database=ProyectoBimboBD;Integrated Security=True;";
+            string connectionString = "Data Source=DESKTOP-7O3687Q;Initial Catalog=bdProyectoBimbo;Integrated Security=True;";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
