@@ -39,8 +39,8 @@ namespace CapaPresentacion
             txtNombre.Text = "";
             txtApellido.Text = "";
             pickerFechaContratacion.Value = DateTime.Now;
-            txtPuesto.Text = "";
-            txtArea.Text = "";
+            cbPuesto.Text = "";
+            cbArea.Text = "";
            
         }
 
@@ -61,8 +61,8 @@ namespace CapaPresentacion
             string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
             DateTime fechaContratacion = pickerFechaContratacion.Value;
-            string puesto = txtPuesto.Text;
-            string area = txtArea.Text;
+            string puesto = cbPuesto.Text;
+            string area = cbArea.Text;
 
             Empleado empleado = new Empleado
             {
@@ -98,8 +98,8 @@ namespace CapaPresentacion
                 txtNombre.Text = nombre;
                 txtApellido.Text = apellido;
                 pickerFechaContratacion.Value = fechaContratacion;
-                txtPuesto.Text = puesto;
-                txtArea.Text = area;
+                cbPuesto.Text = puesto;
+                cbArea.Text = area;
             }
         }
 
@@ -109,8 +109,8 @@ namespace CapaPresentacion
             txtNombre.Enabled = true;
             txtApellido.Enabled = true;
             pickerFechaContratacion.Enabled = true;
-            txtPuesto.Enabled = true;
-            txtArea.Enabled = true;
+            cbPuesto.Enabled = true;
+            cbArea.Enabled = true;
 
             // Cambia el texto del botón "Guardar" a "Guardar Cambios"
             btnGuardar.Text = "Guardar Cambios";
