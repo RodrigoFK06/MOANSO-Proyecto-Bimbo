@@ -46,6 +46,8 @@
     <Compile Include="EmpleadoLogica.cs" />
     <Compile Include="logAreas.cs" />
     <Compile Include="logEncuesta.cs" />
+    <Compile Include="logEstandarCompetencia.cs" />
+    <Compile Include="logNecesidadesFormativas.cs" />
     <Compile Include="logPreguntasE.cs" />
     <Compile Include="NecesidadesFormativasLogica.cs" />
     <Compile Include="PlanDesarrolloFormativoLogica.cs" />

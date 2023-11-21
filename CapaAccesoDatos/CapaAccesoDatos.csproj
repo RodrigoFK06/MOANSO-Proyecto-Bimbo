@@ -43,9 +43,12 @@
   <ItemGroup>
     <Compile Include="ActividadDatos.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="conexion2.cs" />
     <Compile Include="CronogramaDatos.cs" />
     <Compile Include="datAreas.cs" />
     <Compile Include="datEncuesta.cs" />
+    <Compile Include="datEstandarCompetencia.cs" />
+    <Compile Include="datNecesidadesFormativas.cs" />
     <Compile Include="datPreguntasE.cs" />
     <Compile Include="EmpleadoDatos.cs" />
     <Compile Include="NecesidadesFormativasDatos.cs" />

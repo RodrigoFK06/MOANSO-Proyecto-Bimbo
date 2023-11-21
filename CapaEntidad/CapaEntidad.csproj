@@ -46,6 +46,8 @@
     <Compile Include="Empleado.cs" />
     <Compile Include="entAreas.cs" />
     <Compile Include="entEncuesta.cs" />
+    <Compile Include="entEstandarCompetencia.cs" />
+    <Compile Include="entNecesidadesFormativas.cs" />
     <Compile Include="entPreguntasE.cs" />
     <Compile Include="NecesidadesFormativas.cs" />
     <Compile Include="PlanDesarrolloFormativo.cs" />
